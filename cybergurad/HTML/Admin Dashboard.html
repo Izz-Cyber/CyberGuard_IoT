@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard IoT - Dashboard</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<header>
+  <nav class="navbar">
+    <div class="logo">CyberGuard <span>IoT</span></div>
+    <ul class="nav-links">
+      <li><a href="./Home.html">Home</a></li>
+      <li><a href="./DeviceAssessment.html">Assessment</a></li>
+      <li><a class="active" href="./Admin Dashboard.html">Dashboard</a></li>
+      <li><a href="./About(new).html">About</a></li>
+    </ul>
+    <button class="hamburger"><span></span></button>
+  </nav>
+</header>
+
+<!-- ========== First Section ========== -->
+<section class="container" style="padding-top:50px;">
+
+  <h1 class="dashboard-title">📊 Security Dashboard</h1>
+  <p class="text-muted" style="margin-bottom: 32px;">
+    Real-time monitoring of IoT security status and device risk levels.
+  </p>
+
+<!-- Metrics Cards -->
+  <div class="metrics-grid">
+    <div class="metric-card high">
+      <h3>High Risk Devices</h3>
+      <p class="metric-value">3</p>
+    </div>
+
+    <div class="metric-card medium">
+      <h3>Medium Risk Devices</h3>
+      <p class="metric-value">4</p>
+    </div>
+
+    <div class="metric-card safe">
+      <h3>Safe Devices</h3>
+      <p class="metric-value">12</p>
+    </div>
+  </div>
+
+<!-- Table -->
+  <h2 class="section-title">Recent Assessments</h2>
+  <table class="table">
+    <tr>
+      <th>Device</th>
+      <th>Category</th>
+      <th>Status</th>
+      <th>Date</th>
+    </tr>
+    <tr>
+      <td>192.168.1.13</td>
+      <td>Camera</td>
+      <td><span class="badge high">High Risk</span></td>
+      <td>2025-02-10</td>
+    </tr>
+    <tr>
+      <td>ESP32-S3</td>
+      <td>Sensor</td>
+      <td><span class="badge medium">Medium</span></td>
+      <td>2025-02-09</td>
+    </tr>
+    <tr>
+      <td>TP-Link AX72</td>
+      <td>Router</td>
+      <td><span class="badge safe">Safe</span></td>
+      <td>2025-02-08</td>
+    </tr>
+  </table>
+
+</section>
+
+
+<footer>
+    <p>© 2025 CyberGuard IoT — All Rights Reserved</p>
+</footer>
+
+
+        <!-- ====== JavaScript ====== -->
+<script src="../JAVASCRIPT/humburger.js"></script>
+</body>
+</html>

@@ -1,0 +1,574 @@
+/* ====== Base Setting ====== */
+:root{
+    --dark-blue: #0D1B2A;
+    --medium-blue: #1B263B;
+    --cyan: #00B4D8;
+    --light-gray: #F5F6FA;
+    --white: #FFFFFF;
+    --green: #06D6A0;
+    --font-main: 'Poppins', sans-serif;
+    --danger: #e63946;
+    --light: #e5e7eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-main);
+    background-color: var(--dark-blue);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Make footer stick to bottom: use flex layout with a main content area */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; min-height: 100vh; }
+.site-main { flex: 1 0 auto; }
+
+/* ====== Navbar ====== */
+
+header{
+    background: var(--medium-blue);
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.logo span{
+    color: var(--cyan);
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a{
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    columns: var(--cyan);
+}
+
+/* ====== Hero Section ====== */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    background: linear-gradient(135deg, var(--dark-blue) 50%, var(--medium-blue));
+    padding: 0 20px;
+}
+
+.hero-content h1{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-content span{
+    color: var(--cyan);
+}
+
+.hero-content p{
+    font-size: 1.1rem;
+    color: var(--light-gray);
+    margin-bottom: 25px;
+}
+
+.btn-primary{
+    background: var(--cyan);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover{
+    background: #0096c7;
+}
+
+/* General buttons used across forms */
+.btn {
+  display: inline-block;
+  background: var(--cyan);
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.18s ease, transform 0.06s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--light);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.btn-outline:hover { background: rgba(255,255,255,0.02); color: var(--white); }
+
+.btn-link {
+  background: transparent;
+  color: var(--cyan);
+  padding: 0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-link:hover { text-decoration: underline; }
+
+/* File input styling helpers */
+.file-input-hidden { display: none; }
+.file-btn { padding: 8px 12px; border-radius: 8px; font-size: 0.95rem; display:inline-flex; gap:8px; align-items:center; border:1px solid rgba(255,255,255,0.06); color:var(--light); }
+.file-btn:hover { background: rgba(255,255,255,0.02); color:var(--white); }
+.file-name { color: rgba(200,210,220,0.8); font-size: 0.95rem; margin-left:8px; display:inline-block; vertical-align:middle; }
+
+/* Profile specific */
+.profile-card { background:var(--medium-blue); padding:20px; border-radius:12px; }
+.profile-avatar { width:100%; border-radius:8px; margin-bottom:12px; }
+.profile-grid { display:flex; gap:20px; }
+
+.avatar-circle {
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(255,255,255,0.06);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.profile-header h3 { font-size:1.1rem; }
+.profile-preview-img { max-width:120px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); }
+
+/* Profile page background container (uses inline style from PHP) */
+.profile-bg { padding-bottom: 40px; border-radius: 12px; }
+.profile-bg .profile-card { background: rgba(27,38,59,0.6); }
+
+/* ====== Features Section ====== */
+
+.feature{
+    background: var(--dark-blue);
+    border-radius: 12px;
+    padding: 25px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover{
+    transform: translateY(-8px);
+}
+
+.feature h3{
+    color: var(--cyan);
+    margin-bottom: 10px;
+}
+
+/* ====== Footer ====== */
+
+footer{
+    text-align: center;
+    padding: 20px;
+    background: var(--medium-blue);
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+/* ====== Responsive Design ====== */
+
+@media (max-width: 768px){
+  .nav-links{
+    display: none;
+  }
+}
+
+.hero-content h1{
+    font-size: 2rem;
+}
+
+.features{
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ====== Assessment Page ====== */ 
+
+/* ====== CONTAINER SECTION ====== */
+
+
+.assessment-box{
+    max-width: 520px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+    text-align: left;
+}
+
+.assessment-box h2{
+    color: var(--cyan);
+    margin-bottom: 10px;
+}
+
+.assessment-form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.assessment-form label{
+    font-size: 0.95rem;
+    color: var(--light-gray);
+}
+
+.assessment-form input,
+.assessment-form select{
+    padding: 12px;
+    border-radius: var(--radius-md);
+    border: none;
+    background: #0f1a28;
+    color: var(--white);
+    font-size: 1rem;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.assessment-form input:focus,
+.assessment-form select:focus{
+    box-shadow: inset 0 0 0 1px var(--cyan), 0 0 6px rgba(0, 180, 216, 0.4);
+}
+
+/* ===== Assessment Form ===== */
+.form {
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+}
+
+/* Input group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+/* Labels */
+.input-group label {
+  font-size: 0.9rem;
+  color: var(--light);
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+/* Inputs & Select */
+.input-group input,
+.input-group select {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--light);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder color */
+.input-group input::placeholder {
+  color: rgba(200, 210, 220, 0.45);
+}
+
+/* Focus state */
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.08);
+}
+
+/* Button spacing */
+.form .btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background: var(--cyan);
+  color: var(--white);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form {
+    padding: 22px;
+  }
+}
+
+
+/* ====== result page ====== */
+.container .btn-back{
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+} 
+
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+/* ====== Dashboard Page ====== */
+
+.dashboard-title{
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--cyan);
+}
+
+.metrics-grid{
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-bottom: 42px;
+}
+
+.metric-card{
+    flex: 1;
+    min-width: 220px;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-2);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.metric-card h3{
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.metric-card.high{
+    border-left: 6px solid rgb(243, 5, 5);
+}
+
+.metric-card.medium{
+    border-left: 6px solid #f4a261;
+}
+
+.metric-card.safe{
+    border-left: 6px solid green;
+}
+
+.section-title{
+    margin: 30px 0 14px;
+    color: var(--cyan);
+}
+
+
+/*=============================== new*/
+
+
+/* ===== Layout container fix ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* ===== Navbar fixes ===== */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+.logo {
+  flex: 0 0 auto;
+}
+.nav-links {
+  gap: 18px;
+  align-items: center;
+}
+
+/* ensure nav and logo align */
+.navbar { display:flex; align-items:center; justify-content:space-between; }
+
+/* ===== Hero spacing ===== */
+.hero {
+  padding: 48px 20px 36px;
+}
+
+/* ===== Metrics grid improvements ===== */
+.metrics-grid {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  align-items: stretch; /* make cards equal height */
+  margin-bottom: 28px;
+}
+
+/* force equal height cards and vertical centering */
+.metric-card {
+  flex: 1 1 0;
+  min-width: 220px;
+  min-height: 120px; /* ensure visible height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center content vertically */
+  align-items: center;
+  padding: 22px;
+}
+
+/* metric value spacing */
+.metric-value { margin-top: 6px; font-size: 2.2rem; }
+
+/* ===== Table styling ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.table th, .table td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: middle;
+  color: var(--light);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.table thead th {
+  color: var(--cyan);
+  background: rgba(0,0,0,0.06);
+  font-weight:600;
+}
+.table tbody tr:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+/* avoid text cramming in table cells */
+.table td { white-space: nowrap; }
+.table td:nth-child(1) { max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
+
+/* ===== Badges contrast fix ===== */
+.badge { padding:6px 10px; border-radius:999px; font-weight:600; font-size:0.82rem; }
+.badge.safe { background: rgba(6,214,160,0.12); color: var(--green); }
+.badge.medium { background: rgba(244,162,97,0.10); color: #f4a261; }
+.badge.high { background: rgba(230,57,70,0.10); color: var(--danger); }
+
+/* ===== Text muted contrast ===== */
+.text-muted { color: rgba(200,210,220,0.6); }
+
+/* ===== Footer padding fix ===== */
+footer { 
+    padding: 18px 20px; 
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 900px) {
+  .metrics-grid { flex-direction: column; gap:16px; }
+  .metric-card { min-height: 100px; }
+  .hero { padding-bottom: 28px; }
+  .table td { white-space: normal; }
+}
+
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+/* ===== Hamburger button ===== */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  width: 24px;
+  height: 2px;
+  background: var(--light);
+  display: block;
+  position: relative;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger span::before { top: -7px; }
+.hamburger span::after  { top: 7px; }
+
+/* ===== Mobile behavior ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 20px;
+    background: rgba(13,27,42,0.98);
+    flex-direction: column;
+    padding: 14px;
+    border-radius: 8px;
+    gap: 12px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+

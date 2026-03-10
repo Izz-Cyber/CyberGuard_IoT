@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberGuard IoT — Security Assessment</title>
+  <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">CyberGuard <span>IoT</span></div>
+    <ul class="nav-links">
+      <li><a href="./Home.html">Home</a></li>
+      <li><a class="active" href="./DeviceAssessment.html">Assessment</a></li>
+      <li><a href="./Admin Dashboard.html">Dashboard</a></li>
+      <li><a href="./About(new).html">About</a></li>
+    </ul>
+    <button class="hamburger"><span></span></button>
+  </nav>
+</header>
+
+<section class="container" style="padding-top:50px;">
+
+  <h1 class="section-title">🔍 Device Security Assessment</h1>
+  <p class="text-muted" style="margin-bottom:30px;">
+    Enter basic device information to receive an AI-powered security analysis.
+  </p>
+
+  <form class="form">
+
+    <div class="input-group">
+      <label>Device Name</label>
+      <input type="text" placeholder="e.g. TP-Link AX72" required>
+    </div>
+
+    <div class="input-group">
+      <label>Manufacturer</label>
+      <input type="text" placeholder="e.g. TP-Link" required>
+    </div>
+
+    <div class="input-group">
+      <label>Model</label>
+      <input type="text" placeholder="e.g. AX72" required>
+    </div>
+
+    <div class="input-group">
+      <label>Firmware Version (optional)</label>
+      <input type="text" placeholder="e.g. v1.3.2">
+    </div>
+
+    <div class="input-group">
+      <label>Device Category (optional)</label>
+      <select>
+        <option value="">Auto detect by AI</option>
+        <option>Router</option>
+        <option>Camera</option>
+        <option>IoT Sensor</option>
+        <option>Smart Device</option>
+      </select>
+    </div>
+
+    <button class="btn">Start Security Assessment</button>
+
+  </form>
+
+</section>
+
+<footer>
+  <p>© 2025 CyberGuard IoT — All Rights Reserved</p>
+</footer>
+
+<script src="../JAVASCRIPT/assessment.js"></script>
+
+</body>
+</html>
